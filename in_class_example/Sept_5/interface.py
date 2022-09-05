@@ -28,10 +28,17 @@ def check_HDL(HDL_value):
     elif HDL_value < 40:
         return "Low"
 
+def HDL_drive():
+    hdl_value = input_HDL()
+    answer = check_HDL(hdl_value)
+    output_HDL_results(hdl_value, answer)
+
+def output_HDL_results(hdl_value, charac):
+    print("The results for an HDL, value of {} is {}".format(hdl_value, charac))
 
 # interface()
 # interface2()
 
 # HDL_input
 
-check_HDL()
+HDL_drive()
