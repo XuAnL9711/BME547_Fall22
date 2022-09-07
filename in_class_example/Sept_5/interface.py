@@ -16,29 +16,32 @@ def interface2():
         if choice=='9':
             return
 
-def input_HDL():
-    HDL_input = input('Enter the HDL value:')
-    return int(HDL_input)
+def input_LDL():
+    LDL_input = input('Enter the LDL value:')
+    return int(LDL_input)
 
-def check_HDL(HDL_value):
-    if HDL_value >= 60:
+def check_LDL(LDL_value):
+    if LDL_value <= 130:
         return "Normal"
-    elif 40 <= HDL_value < 60:
-        return "Borderline Low"
-    elif HDL_value < 40:
-        return "Low"
+    elif 130 <= LDL_value < 159:
+        return "Borderline High"
+    elif 160 <= LDL_value < 189:
+        return "High"
+    elif LDL_value >= 190:
+        return "Very High"
 
-def HDL_drive():
-    hdl_value = input_HDL()
-    answer = check_HDL(hdl_value)
-    output_HDL_results(hdl_value, answer)
+def LDL_drive():
+    ldl_value = input_LDL()
+    answer = check_LDL(ldl_value)
+    output_LDL_results(ldl_value, answer)
 
-def output_HDL_results(hdl_value, charac):
-    print("The results for an HDL, value of {} is {}".format(hdl_value, charac))
+def output_LDL_results(ldl_value, charac):
+    print("The results for an LDL, value of {} is {}".format(ldl_value, charac))
 
 # interface()
 # interface2()
 
 # HDL_input
 
-HDL_drive()
+# HDL_drive()
+LDL_drive()
