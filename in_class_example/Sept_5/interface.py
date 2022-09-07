@@ -30,13 +30,26 @@ def check_LDL(LDL_value):
     elif LDL_value >= 190:
         return "Very High"
 
+def check_total_Cholesterol(LDL_value):
+    if LDL_value <= 200:
+        return "Normal"
+    elif 200 < LDL_value < 239:
+        return "Borderline high"
+    elif LDL_value >= 240:
+        return "High"
+
 def LDL_drive():
     ldl_value = input_LDL()
     answer = check_LDL(ldl_value)
     output_LDL_results(ldl_value, answer)
+    answer_cholesterol = check_total_Cholesterol(ldl_value)
+    output_cholesterol_results(ldl_value, answer_cholesterol)
 
 def output_LDL_results(ldl_value, charac):
     print("The results for an LDL, value of {} is {}".format(ldl_value, charac))
+
+def output_cholesterol_results(ldl_value, charac):
+    print("The results for a total Cholesterol Check, value of {} is {}".format(ldl_value, charac))
 
 # interface()
 # interface2()
