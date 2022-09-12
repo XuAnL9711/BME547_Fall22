@@ -1,3 +1,6 @@
+print("This is the calculator.py module")
+print("Pyton thinks this is called {}".format(__name__))
+
 def interface():
     print("My Program")
     print("Options:")
@@ -19,6 +22,14 @@ def interface2():
 def input_LDL():
     LDL_input = input('Enter the LDL value:')
     return int(LDL_input)
+
+def check_HDL(HDL_value):
+    if HDL_value >= 60:
+        return "Normal"
+    elif 40 <= HDL_value < 60:
+        return "Borderline Low"
+    elif HDL_value < 40:
+        return "Low"
 
 def check_LDL(LDL_value):
     if LDL_value <= 130:
@@ -57,4 +68,6 @@ def output_cholesterol_results(ldl_value, charac):
 # HDL_input
 
 # HDL_drive()
-LDL_drive()
+
+if __name__ == "__main__":
+    LDL_drive()
