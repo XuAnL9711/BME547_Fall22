@@ -1,3 +1,4 @@
+
 def create_patient_entry(patient_first_name, patient_last_name, patient_id, patient_age):
     new_patient = {"First Name": patient_first_name,
                     "Last Name": patient_last_name,
@@ -9,16 +10,19 @@ def create_patient_entry(patient_first_name, patient_last_name, patient_id, pati
 
 def print_database(db):
     for patient_key in db:
-        print(patient_key)
         # print("Name: {}, id: {}, age: {}".format(patient["First Name"],
         #                                         patient["Id"],
         #                                         patient["Age"]))
-        print("Name: {}, id: {}, age: {}".format(get_full_name(db[patient_key]),
-                                                db[patient_key]["Id"],
-                                                db[patient_key]["Age"]))
+        # print("Name: {}, id: {}, age: {}".format(get_full_name(db[patient_key]),
+        #                                         db[patient_key]["Id"],
+        #                                         db[patient_key]["Age"]))
+        print("Name: {}, id: {}, age: {}".format(get_full_name(patient_key),
+                                        patient_key["Id"],
+                                        patient_key["Age"]))
 
 
 def get_full_name(patient):
+    print('full name', patient["First Name"], patient["Last Name"])
     full_name = "{} {}".format(patient["First Name"], patient["Last Name"])
     return full_name
 
@@ -53,10 +57,11 @@ def main():
     db.append(create_patient_entry("Bob", "Boyles", 22, 34))
     db.append(create_patient_entry("Chris", "Chou", 3, 25))
     print_database(db)
-    add_test_to_patient(db, 3, "HDL", 100)
+    # exit(0)
+    add_test_to_patient(db, 2, "HDL", 100)
     print_database(db)
-    print("Patient {} is a {}".format(get_full_name(db[2],
-                                        adult_or_minor(db[2]))))
+    print("Patient {} is a {}".format(get_full_name(db[2]),
+                                        adult_or_minor(db[2])))
 
 
 if __name__ == "__main__":
